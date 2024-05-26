@@ -12,7 +12,7 @@
 
 
 &left_encoder {
-        steps = <60>;
+        steps = <80>;
   };
 
 &right_encoder {
