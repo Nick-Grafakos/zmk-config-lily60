@@ -11,12 +11,21 @@
 #include <dt-bindings/zmk/outputs.h>
 
 
-&left_encoder { steps = <36>; };
+&left_encoder { 
+        compatible = "alps,ec11";
+        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+  };
+
 &right_encoder { steps = <36>; };
+
 &sensors {
-  sensors = <&right_encoder>,<&left_encoder>;
-  triggers-per-rotation = <36>;
+ compatible = "zmk,keymap-sensors";
+ sensors = <&left_encoder &right_encoder>;
+ triggers-per-rotation = <20>;
 };
+
 
 / {
     keymap {
@@ -38,9 +47,7 @@
                                   &kp C_PLAY_PAUSE  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp SPACE    &kp SPACE  &kp RIGHT_COMMAND  &kp CAPSLOCK  &kp K_MUTE
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
-                <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP> &inc_dec_kp LEFT_ARROW RIGHT_ARROW>;
         };
 
         lower_layer {
