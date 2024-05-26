@@ -12,16 +12,16 @@
 
 
 &left_encoder {
-        steps = <85>;
+        steps = <72>;
   };
 
 &right_encoder {
-        steps = <20>;
+        steps = <72>;
   };
 
 &sensors {
  sensors = <&left_encoder &right_encoder>;
- triggers-per-rotation = <36>;
+ triggers-per-rotation = <72>;
 };
 
 
