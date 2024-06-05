@@ -81,7 +81,7 @@
                            &trans  &trans  &trans  &trans    &trans  &trans       &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_NEXT K_PREVIOUS>;
+            sensor-bindings = <&inc_dec_kp C_FAST_FORWARD C_REWIND>;
         };
     };
 };
