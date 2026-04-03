@@ -1,0 +1,9 @@
+/ {
+    chosen {
+        zmk,display = &nice_view;
+    };
+};
+
+&nice_view {
+    cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+};
