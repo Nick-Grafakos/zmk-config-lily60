@@ -4,6 +4,11 @@
     };
 };
 
+&spi1 {
+    status = "okay";
+};
+
 &nice_view {
+    status = "okay";
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 };
